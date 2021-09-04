@@ -6,8 +6,8 @@ import (
 )
 
 func main() {
-	type AmericanVelocity float32
-	type EuropeanVelocity float32
+	type AmericanVelocity float64
+	type EuropeanVelocity float64
 
 	const eur EuropeanVelocity = 120.4
 	const us AmericanVelocity = 130
@@ -15,10 +15,8 @@ func main() {
 	var eurSpeed EuropeanVelocity = eur * 3.6
 	var usSpeed AmericanVelocity = ((us * 1000) / 3600) / 1.609
 
-	usSpeed1 := float64(usSpeed)
-	usSpeed2 := math.Round((usSpeed1 * 100) / 100)
+	amV := float64(usSpeed)
 
-	fmt.Println(eurSpeed, usSpeed1)
-	fmt.Printf("%.2f\n", usSpeed1)	
-	fmt.Printf("%.2f\n", usSpeed2)	
+	fmt.Println(eurSpeed, usSpeed)
+	fmt.Println(math.Round(amV * 100) / 100)
 }
