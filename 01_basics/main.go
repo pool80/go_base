@@ -1,9 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-	fmt.Println("Hello world")
-	fmt.Println("Привет мир")
-	fmt.Println("another hello")
+	timestamp := time.Now()
+	fmt.Println(timestamp.Format("02 Jan 06 15:04"))
 }
