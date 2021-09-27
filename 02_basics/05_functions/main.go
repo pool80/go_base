@@ -1,5 +1,5 @@
 /*
-Напишите функцию contains, которая принимает на вход два параметра: слайс строк a и строку x. 
+Напишите функцию contains, которая принимает на вход два параметра: слайс строк a и строку x.
 Функция должна проверять, содержится ли строка x в слайсе a, и возвращать булево значение.
 
 Создайте вариативную функцию getMax, которая находит максимальное целое число из переданных на вход параметров.
@@ -8,33 +8,33 @@
 
 package main
 
-import  "fmt"
+import "fmt"
 
 func main() {
-	contains([]string{"hello", "world"}, "world")
-	getMax(5, 6, 7, 35, 5, 66, -4)
+	c := contains([]string{"hello", "world"}, "world")
+	max := getMax(5, 6, 7, 35, 5, 66, -4)
+
+	fmt.Println(c, max)
 }
 
-func contains(a []string, x string) bool{
+func contains(a []string, x string) bool {
 	var z bool
 	for _, word := range a {
-		if word == x{
+		if word == x {
 			z = true
 		} else {
 			z = false
 		}
 	}
-	fmt.Println(z)
 	return z
 }
 
-func getMax(n...int) int {
+func getMax(n ...int) int {
 	max := n[0]
 	for _, i := range n {
 		if max <= i {
 			max = i
 		}
 	}
-	fmt.Println(max)
 	return max
 }
