@@ -22,5 +22,11 @@ func main() {
 		return result, nil
 	}
 
-	fmt.Printf("%+v\n", cust)
+	price := 1000 // Пример цены товара
+    finalPrice, err := internal.CalcPrice(*cust, price)
+    if err != nil {
+        fmt.Printf("Error calculating price: %v\n", err)
+    } else {
+        fmt.Printf("Final price: %d\n", finalPrice)
+    }
 }

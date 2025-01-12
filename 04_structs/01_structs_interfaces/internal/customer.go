@@ -18,3 +18,16 @@ func NewCustomer(name string, age int, balance int, debt int, discount bool) *Cu
 		Discount: discount,
 	}
 }
+
+// реализация функции CalcPrice
+func CalcPrice(cust Customer, price int) (int, error) {
+    discountAmount, err := cust.CalcDiscount()
+    if err != nil {
+        return 0, err
+    }
+    finalPrice := price - discountAmount
+    if finalPrice < 0 {
+        finalPrice = 0
+    }
+    return finalPrice, nil
+}
